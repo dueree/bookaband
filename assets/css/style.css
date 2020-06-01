@@ -33,18 +33,95 @@ h1 {
   padding-right: 5em;
 }
 
+#headerpic {
+  z-index: -1;
+  top: 0px;
+  left: -20px;
+  position: absolute;
+  height: 800px;
+  width: 1600px;
+  background-image: url('../img/mark_bw.png');
+  /* background-position: bottom; */
+  background-position-y: -320px ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: rotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+#headerpic_hide_left{
+  z-index: 0;
+  top: 0px;
+  left: -40px;
+  position: absolute;
+  height: 800px;
+  width: 40px;  
+  background-color: #1a1a1a;
+}
+
+#headerpic_hide_right {
+  z-index: 0;
+  top: 0px;
+  left: 1570px;
+  position: absolute;
+  height: 800px;
+  width: 10px;  
+  background-color: #1a1a1a;  
+}
+
+#headerpic_background {
+  z-index: -2;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  height: 700px;
+  width: 1366px;
+  background-color: #ECD931;
+  animation-name: change_color;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+
+
 header {
+  position: relative;
   height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-top: 2em;
   padding-bottom: 2em;
-  background-image: url('../img/mark_bw.png');
+
+/*   background-image: url('../img/mark_bw.png');
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ECD931;
+  background-color: #ECD931; 
+  animation-name: change_color;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+*/
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0);}
+  2% {
+    transform: rotate(-2deg);
+    transform-origin: left bottom;
+  }
+  6% {transform: rotate(0);}
+  100% {transform: rotate(0);}
+}
+
+@keyframes change_color {
+  0% {background-color: #ECD931;}
+  25% {background-color: rgb(14, 135, 172); }
+  50% {background-color: rgb(42, 153, 38);}
+  75% {background-color: rgb(128, 24, 110);}
+  100% {background-color: #ECD931;}
 }
 
 nav {
